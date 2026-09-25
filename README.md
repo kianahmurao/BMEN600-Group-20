@@ -11,14 +11,14 @@
 
 ### Dataset: https://github.com/ojwalch/sleep_accel and https://physionet.org/content/bidsleep-dataset/1.0.0/
 
-### Biggest Uncertainty: Old data
+### Biggest Uncertainty: Old data, knowing which datasets correlate with each other (raw data vs metadata)
 
 
 ## Candidate Project 2: 
-## Biomedical Problem: Looking at hemodynamic parameters in relation to mitral valve prosthesis performance 
+## Biomedical Problem: Looking at the accuracy/feasibility of a bioimpedance tattoo for monitoring blood pressure 
 
-### Possible Research Q: How can the relationship between heart regurgitation/cardiac output/leakage correlate with mitral valve performance?
+### Possible Research Q: How does exercise intensity affect the accuracy of blood pressure measurements of a bioimpedance tattoo versus a traditional blood pressure cuff? 
 
-### Dataset: https://data.mendeley.com/datasets/s3swc5459t/1
+### Dataset: https://physionet.org/content/bp-graphene-bioimpedance/1.0.0/subject2_day1/#files-panel 
 
-### Biggest Uncertainty: Limited data sample, understanding what the data represents and confounding factors
+### Biggest Uncertainty: Novelty of idea/approach, patient variability, which and how many variables we should consider in analysis 
