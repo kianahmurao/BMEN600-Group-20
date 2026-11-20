@@ -4,27 +4,15 @@ All files are in `preprocessed/`. These are the inputs to the ML pipeline.
 
 | File |  Descriptions |
 |---|---|
-| segments.npy **[Download here](https://drive.google.com/file/d/1XAH6HQQ__LVGcHmAVmhQo8CnJjl5f8YQ/view?usp=sharing)** and place it in `data/preprocessed/` |   The cleaned, filtered signal data as one 3D NumPy array.
-  The sampling rate is 100 Hz,so each segment is about 10.24 seconds long.
-  Each recording was trimmed (first 0.5 s removed), gap-filled, band-pass
-  filtered (0.5-20 Hz, 4th-order Butterworth, zero-phase), then cut into
-  1024-sample segments. Load with: X = np.load("segments.npy") |
-| `healthy_oof_scores_v2.csv` | healthy subject × task × role | `raw` (log Mahalanobis), `mu`/`sd` (calibration), `z` |
+| segments.npy **[Download here](https://drive.google.com/file/d/1XAH6HQQ__LVGcHmAVmhQo8CnJjl5f8YQ/view?usp=sharing)** and place it in `data/preprocessed/` |   The cleaned, filtered signal data as one 3D NumPy array. The sampling rate is 100 Hz,so each segment is about 10.24 seconds long. Each recording was trimmed (first 0.5 s removed), gap-filled, band-pass filtered (0.5-20 Hz, 4th-order Butterworth, zero-phase), then cut into 1024-sample segments. Load with: X = np.load("segments.npy") |
+| segments.npz **[Download here](https://drive.google.com/file/d/1y3m0vdroxFWETq6ueKqoZ4maYmjb5Y6Y/view?usp=sharing)** and place it in `data/preprocessed/`|   A compressed copy of the same array. It holds the array as "X" and the channel names as "channels". Use it if you want smaller file size or the channel labels stored with the data.|
 | `healthy_subject_deviation_v2.csv` | healthy subject (79) | `deviation` (mean z), `n_units`, `age`, `gender` |
 | `pd_unit_scores.csv` | PD subject × task × role | `raw`, `mu`, `sd`, `z` |
 | `pd_scores.csv` | PD subject (269) | `deviation`, `duration` (years), `percentile_vs_healthy`, `peer_percentile_same_duration` |
 
-| segments.npy **[Download here](https://drive.google.com/file/d/1XAH6HQQ__LVGcHmAVmhQo8CnJjl5f8YQ/view?usp=sharing)** and place it in `data/preprocessed/` |
-  The cleaned, filtered signal data as one 3D NumPy array.
-  The sampling rate is 100 Hz,so each segment is about 10.24 seconds long.
-  Each recording was trimmed (first 0.5 s removed), gap-filled, band-pass
-  filtered (0.5-20 Hz, 4th-order Butterworth, zero-phase), then cut into
-  1024-sample segments. Load with: X = np.load("segments.npy")
 
-segments.npz **[Download here](https://drive.google.com/file/d/1y3m0vdroxFWETq6ueKqoZ4maYmjb5Y6Y/view?usp=sharing)** and place it in `data/preprocessed/`
-  A compressed copy of the same array. It holds the array as "X" and the
-  channel names as "channels". Use it if you want smaller file size or the
-  channel labels stored with the data.
+
+
 
 segment_metadata.csv
   One row per segment, in the SAME ORDER as segments.npy: row i of this table
