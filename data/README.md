@@ -2,6 +2,18 @@
 
 All files are in `preprocessed/`. These are the inputs to the ML pipeline.
 
+| File |  Descriptions |
+|---|---|
+| segments.npy **[Download here](https://drive.google.com/file/d/1XAH6HQQ__LVGcHmAVmhQo8CnJjl5f8YQ/view?usp=sharing)** and place it in `data/preprocessed/` |   The cleaned, filtered signal data as one 3D NumPy array.
+  The sampling rate is 100 Hz,so each segment is about 10.24 seconds long.
+  Each recording was trimmed (first 0.5 s removed), gap-filled, band-pass
+  filtered (0.5-20 Hz, 4th-order Butterworth, zero-phase), then cut into
+  1024-sample segments. Load with: X = np.load("segments.npy") |
+| `healthy_oof_scores_v2.csv` | healthy subject × task × role | `raw` (log Mahalanobis), `mu`/`sd` (calibration), `z` |
+| `healthy_subject_deviation_v2.csv` | healthy subject (79) | `deviation` (mean z), `n_units`, `age`, `gender` |
+| `pd_unit_scores.csv` | PD subject × task × role | `raw`, `mu`, `sd`, `z` |
+| `pd_scores.csv` | PD subject (269) | `deviation`, `duration` (years), `percentile_vs_healthy`, `peer_percentile_same_duration` |
+
 | segments.npy **[Download here](https://drive.google.com/file/d/1XAH6HQQ__LVGcHmAVmhQo8CnJjl5f8YQ/view?usp=sharing)** and place it in `data/preprocessed/` |
   The cleaned, filtered signal data as one 3D NumPy array.
   The sampling rate is 100 Hz,so each segment is about 10.24 seconds long.
