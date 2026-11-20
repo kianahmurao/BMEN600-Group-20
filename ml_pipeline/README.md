@@ -3,7 +3,7 @@
 The pipeline has two stages:
 
 1. **Stage 1, healthy signature:** learn what "normal" movement looks like using **healthy participants only**.
-2. **Stage 2, PD scoring and duration context:** score PD patients against that healthy reference, then compare each patient to other patients with a similar disease duration.
+2. **Stage 2, PD scoring and duration context:** score PD patients against the healthy reference, then compare each patient to other patients with a similar disease duration.
 
 The same feature extraction and scoring functions are used for healthy and PD participants.
 
@@ -29,7 +29,7 @@ ml_pipeline/
 
 ## How Stage 1 works (`healthy_signature_v2.py`)
 
-1. **Prepare segments.** Keep the first 974 samples (dropping 50 padding samples). For CrossArms and LiftHold, also trim the first 3 s, because movement starts later in those tasks.
+1. **Prepare segments.** Keep the first 974 samples (dropping 50 padding samples). For CrossArms and LiftHold, also trim the first 3s, because movement starts later in those tasks.
 2. **Extract features.** There are 22 features per segment, 11 each for the accelerometer and gyroscope: log RMS, log 5–95% range, log jerk, log band power (0.5–3, 3–7, 4–6, 7–12, 12–20 Hz), relative power in 4–6 and 3–7 Hz, and spectral entropy (Welch PSD, 0.5–20 Hz).
 3. **Build the unit table.** Average the features for each **unit**, meaning one (subject, task, wrist role). That gives 11 tasks × 2 roles = 22 units per person. Age and sex are attached to each row.
 4. **Fit one normative model per (task, role)**, each on healthy participants only:
