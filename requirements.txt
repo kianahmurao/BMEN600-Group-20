@@ -1,0 +1,8 @@
+# Pinned to the exact versions used to save healthy_model_v2.joblib.
+# Newer scikit-learn versions CANNOT load the model correctly.
+numpy==2.4.6
+scipy==1.16.3
+scikit-learn==1.6.1
+pandas==2.2.3
+joblib
+matplotlib
