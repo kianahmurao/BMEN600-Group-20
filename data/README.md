@@ -2,7 +2,7 @@
 
 All files are in `preprocessed/`. These are the inputs to the ML pipeline.
 
-segments.npy **[Download here](https://drive.google.com/file/d/1XAH6HQQ__LVGcHmAVmhQo8CnJjl5f8YQ/view?usp=sharing)** and place it in `data/preprocessed/`
+| segments.npy **[Download here](https://drive.google.com/file/d/1XAH6HQQ__LVGcHmAVmhQo8CnJjl5f8YQ/view?usp=sharing)** and place it in `data/preprocessed/` |
   The cleaned, filtered signal data as one 3D NumPy array.
   The sampling rate is 100 Hz,so each segment is about 10.24 seconds long.
   Each recording was trimmed (first 0.5 s removed), gap-filled, band-pass
