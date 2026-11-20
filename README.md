@@ -15,3 +15,5 @@
 
 ## File map and steps to run code
 ### The code for the midterm proposal are committed under BMEN_(Oct_15)_MidtermProposal. The code should run in Google Colab or other Python platforms by retrieving files from a publicly available Google Drive folder. The necessary .csv and .txt files are also saved in a zip file on the repository 600 code-20261016T191445Z-1-001.zip with the files saved under the same names. Software and setup is embedded within the code
+
+### For the final project and pipeline, the necessary code and files are saved in the directory in folders "preprocessed" and "ml pipeline". Each folder has their own README.md file outlining the necessary files and instructions to run the code. 
