@@ -6,29 +6,10 @@ All files are in `preprocessed/`. These are the inputs to the ML pipeline.
 |---|---|
 | segments.npy **[Download here](https://drive.google.com/file/d/1XAH6HQQ__LVGcHmAVmhQo8CnJjl5f8YQ/view?usp=sharing)** and place it in `data/preprocessed/` |   The cleaned, filtered signal data as one 3D NumPy array. The sampling rate is 100 Hz,so each segment is about 10.24 seconds long. Each recording was trimmed (first 0.5 s removed), gap-filled, band-pass filtered (0.5-20 Hz, 4th-order Butterworth, zero-phase), then cut into 1024-sample segments. Load with: X = np.load("segments.npy") |
 | segments.npz **[Download here](https://drive.google.com/file/d/1y3m0vdroxFWETq6ueKqoZ4maYmjb5Y6Y/view?usp=sharing)** and place it in `data/preprocessed/`|   A compressed copy of the same array. It holds the array as "X" and the channel names as "channels". Use it if you want smaller file size or the channel labels stored with the data.|
-| segment_metadata.csv|   One row per segment, in the SAME ORDER as segments.npy: row i of this table describes segments.npy[i]. Columns: segment_index: position of the segment in the array (0, 1, 2, ...)
-subject_id         participant ID, zero-padded text (e.g. "001")
-task               movement task name (from the filename)
-wrist              left or right (original label)
-role               dominant, non-dominant, or unknown (from handedness)
-handedness_missing True if handedness was not available for that participant
-seg                0 or 1; recordings long enough for two segments give
-                       seg 0 and seg 1, single-segment recordings give seg 0
-label              0 = healthy, 1 = Parkinson's disease (2 = other, if present)
-age, age_at_diagnosis
-duration           age minus age at diagnosis (Parkinson's patients only)
-gender, handedness
-source_file        the original recording .txt file |
-| `pd_unit_scores.csv` | PD subject × task × role | `raw`, `mu`, `sd`, `z` |
-| `pd_scores.csv` | PD subject (269) | `deviation`, `duration` (years), `percentile_vs_healthy`, `peer_percentile_same_duration` |
+| segment_metadata.csv|   One row per segment, in the SAME ORDER as segments.npy: row i of this table describes segments.npy[i]. Columns are described below |
+| qc_report.csv | Quality-control log with one row per original recording, including rejected ones. Only technical artifacts are rejected. |
 
-
-
-
-
-segment_metadata.csv
-  One row per segment, in the SAME ORDER as segments.npy: row i of this table
-  describes segments.npy[i]. Columns:
+## segment_metadata.csv columns:
     segment_index      position of the segment in the array (0, 1, 2, ...)
     subject_id         participant ID, zero-padded text (e.g. "001")
     task               movement task name (from the filename)
@@ -43,7 +24,5 @@ segment_metadata.csv
     gender, handedness
     source_file        the original recording .txt file
 
-qc_report.csv
-  Quality-control log with one row per original recording, including rejected
-  ones. Only technical artifacts are rejected.
+
 
