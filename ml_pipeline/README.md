@@ -68,7 +68,7 @@ Install the pinned packages first, from the repo root:
 pip install -r requirements.txt
 ```
 
-> ⚠️ The model must be loaded with **scikit-learn 1.6.1**. Newer versions fail with an error like `'SimpleImputer' object has no attribute '_fill_dtype'`.
+> The model must be loaded with **scikit-learn 1.6.1**. Newer versions fail with an error like `'SimpleImputer' object has no attribute '_fill_dtype'`.
 
 **Score participants with the frozen model** (run from the repo root):
 
